@@ -14,19 +14,16 @@ package
 		public function BulletManager() 
 		{
 			super();
-			
-			//	There are 40 bullets in our pool
-			for (var i:int = 0; i < 40; i++)
-			{
-				add(new Bullet);
-			}
+
 		}
 		
 		public function fire(bx:int, by:int):void
 		{
-			if (getFirstAvail())
+			trace("her33e");
+			if (Registry.currgroup.getFirstAvail())
 			{
-				Bullet(getFirstAvail()).fire(bx, by);
+				trace("here");
+				Bullet(Registry.currgroup.getFirstAvail()).fire(bx, by);
 			}
 			
 		}

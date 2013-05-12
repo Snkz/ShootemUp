@@ -6,16 +6,16 @@ package
 	 * ...
 	 * @author Snkz
 	 */
-	public class FireBullet extends FlxSprite implements Bullet
+	public class BeamBullet extends FlxSprite implements Bullet
 	{
-		[Embed(source = '../assets/firebullet.png')] private var firebulletPNG:Class;
+		[Embed(source = '../assets/firebullet.png')] private var beambulletPNG:Class;
 		
-		public var damage:int = 3;
-		public var speed:int = 50;
+		public var damage:int = 2;
+		public var speed:int = 200;
 		
-		public function FireBullet() 
+		public function BeamBullet() 
 		{
-			super(0, 0, firebulletPNG);
+			super(0, 0, beambulletPNG);
 			
 			//	We do this so it's ready for pool allocation straight away
 			exists = false;

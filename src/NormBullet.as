@@ -6,23 +6,24 @@ package
 	 * ...
 	 * @author Snkz
 	 */
-	public class FireBullet extends FlxSprite implements Bullet
+	public class NormBullet extends FlxSprite implements Bullet
 	{
-		[Embed(source = '../assets/firebullet.png')] private var firebulletPNG:Class;
+		[Embed(source = '../assets/bullet.png')] private var normbulletPNG:Class;
 		
-		public var damage:int = 3;
-		public var speed:int = 50;
+		public var damage:int = 1;
+		public var speed:int = 300;
 		
-		public function FireBullet() 
+		public function NormBullet() 
 		{
-			super(0, 0, firebulletPNG);
+			super(0, 0, normbulletPNG);
 			
 			//	We do this so it's ready for pool allocation straight away
 			exists = false;
 		}
-		
+
 		public function fire(bx:int, by:int):void
 		{
+			trace("EHERHE");
 			x = bx;
 			y = by;
 			velocity.y = -speed;

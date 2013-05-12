@@ -16,7 +16,8 @@ package
 			super.create();
 			
 			debug = new FlxText(0, 0, 200, "");
-			
+		
+			Registry.init();
 			add(Registry.stars);
 			add(Registry.fx);
 			add(Registry.enemies);
