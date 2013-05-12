@@ -8,10 +8,11 @@ package
 	 */
 	public class BeamBullet extends FlxSprite implements Bullet
 	{
-		[Embed(source = '../assets/firebullet.png')] private var beambulletPNG:Class;
+		[Embed(source = '../assets/beam.png')] private var beambulletPNG:Class;
 		
-		public var damage:int = 2;
+		public var damage:int = 1;
 		public var speed:int = 200;
+		private var bulletDelay:int = 0;
 		
 		public function BeamBullet() 
 		{
@@ -38,6 +39,16 @@ package
 			{
 				exists = false;
 			}
+		}
+		
+		public function getBulletDelay():int 
+		{
+			return bulletDelay;
+		}
+		
+		public function doesVanish():Boolean 
+		{
+			return true;
 		}
 		
 	}

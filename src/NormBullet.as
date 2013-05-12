@@ -12,6 +12,7 @@ package
 		
 		public var damage:int = 1;
 		public var speed:int = 300;
+		private var bulletDelay:int = 75;
 		
 		public function NormBullet() 
 		{
@@ -23,7 +24,6 @@ package
 
 		public function fire(bx:int, by:int):void
 		{
-			trace("EHERHE");
 			x = bx;
 			y = by;
 			velocity.y = -speed;
@@ -39,6 +39,16 @@ package
 			{
 				exists = false;
 			}
+		}
+		
+		public function getBulletDelay():int 
+		{
+			return bulletDelay;
+		}
+		
+		public function doesVanish():Boolean 
+		{
+			return true;
 		}
 		
 	}

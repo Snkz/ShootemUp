@@ -23,10 +23,8 @@ package
 		
 		public function fire(bx:int, by:int):void
 		{
-			trace("her33e");
 			if (Registry.currgroup.getFirstAvail())
 			{
-				trace("here");
 				Bullet(Registry.currgroup.getFirstAvail()).fire(bx, by);
 			}
 			

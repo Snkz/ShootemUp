@@ -11,7 +11,9 @@ package
 		[Embed(source = '../assets/firebullet.png')] private var firebulletPNG:Class;
 		
 		public var damage:int = 3;
-		public var speed:int = 50;
+		public var speed:int = 100;
+		private var bulletDelay:int = 200;
+		private var vanishCounter:int = 10;
 		
 		public function FireBullet() 
 		{
@@ -40,6 +42,22 @@ package
 			}
 		}
 		
+		public function getBulletDelay():int 
+		{
+			return bulletDelay;
+		}
+		
+		public function doesVanish():Boolean 
+		{
+			if (vanishCounter ==  0) {
+				vanishCounter = 10;
+				return true;
+			} else {
+				vanishCounter--;
+				return false;
+			}
+		}
+
 	}
 
 }

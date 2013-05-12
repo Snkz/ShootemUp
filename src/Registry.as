@@ -16,9 +16,18 @@ package
 		public static var bulletgroup:FlxGroup = new FlxGroup();
 		public static var beamgroup:FlxGroup = new FlxGroup();
 		
+		public static var normgun:NormBullet = new NormBullet();
+		public static var firegun:FireBullet = new FireBullet();
+		public static var beamgun:BeamBullet = new BeamBullet();
+		
 		public static var FIRECOUNT:int = 20;
 		public static var BULLETCOUNT:int = 40;
-		public static var BEAMCOUNT:int = 2;
+		public static var BEAMCOUNT:int = 80;
+		
+		public static var NORMBULLET:int = 1;
+		public static var FIREBULLET:int = 2;
+		public static var BEAMBULLET:int = 3;
+		
 		
 		public static var gungroups:Array = [firegroup, bulletgroup, beamgroup];
 		
@@ -33,8 +42,9 @@ package
 			// Beam Group
 			for (var k:int = 0; k < BEAMCOUNT; k++) { beamgroup.add(new BeamBullet); }
 			
-			// Set the default group (not sure if gun default is needed or makes sense anymore)
+			// Set the default group and gun type
 			currgroup = bulletgroup;
+			currgun = normgun;
 			
 			// Create the manager
 			bullets = new BulletManager;

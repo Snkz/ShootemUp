@@ -40,9 +40,11 @@ package
 			}
 		}
 		
-		public function bulletHitEnemy(bullet:FlxObject, enemy:FlxObject):void
+		public function bulletHitEnemy(bullet:Bullet, enemy:FlxObject):void
 		{
-			bullet.kill();
+			if (bullet.doesVanish()) {
+				bullet.kill();
+			}
 			
 			enemy.hurt(1);
 			

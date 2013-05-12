@@ -8,7 +8,6 @@ package
 	{
 		[Embed(source = '../assets/player.png')] private var playerPNG:Class;
 		
-		private var bulletDelay:int = 75;
 		private var lastFired:int;
 		private var xSpeed:uint = 200;
 		private var ySpeed:uint = 100;
@@ -64,22 +63,26 @@ package
 			}
 			
 			//	Fire!
-			if (FlxG.keys.CONTROL && getTimer() > lastFired + bulletDelay)
+			if (FlxG.keys.CONTROL && getTimer() > lastFired + Registry.currgun.getBulletDelay())
 			{
 				switch (fireType)
 				{
-					case 1:
+					case Registry.NORMBULLET:
+						// Regular shot
 						Registry.bullets.fire(x + 5, y);
 						break;
 						
-					case 2:
-						//	Double fire!
-						Registry.bullets.fire(x, y);
-						Registry.bullets.fire(x + 10, y);
+					case Registry.FIREBULLET:
+						//	Fire shot
+						Registry.bullets.fire(x - 10, y - 30);
 						break;
 						
-					case 3:
-						//	Quad fire!
+					case Registry.BEAMBULLET:
+						// Beam shot
+						Registry.bullets.fire(x + 5, y);
+						break;
+					case 4:
+						//	Quad shot!
 						Registry.bullets.fire(x - 8, y);
 						Registry.bullets.fire(x, y - 4);
 						Registry.bullets.fire(x + 10, y - 4);

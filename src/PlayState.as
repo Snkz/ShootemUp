@@ -37,17 +37,30 @@ package
 			//	Debug Testing - these will come from power-ups at some stage
 			if (FlxG.keys.justReleased("F1"))
 			{
-				Registry.player.fireType = 1;
+				Registry.player.fireType = Registry.NORMBULLET;
+				Registry.currgroup = Registry.bulletgroup;
+				Registry.currgun = Registry.normgun;
 			}
 			
 			if (FlxG.keys.justReleased("F2"))
 			{
-				Registry.player.fireType = 2;
+				Registry.player.fireType = Registry.FIREBULLET;
+				Registry.currgroup = Registry.firegroup;
+				Registry.currgun = Registry.firegun;
 			}
 			
 			if (FlxG.keys.justReleased("F3"))
 			{
-				Registry.player.fireType = 3;
+				Registry.player.fireType = Registry.BEAMBULLET;
+				Registry.currgroup = Registry.beamgroup;
+				Registry.currgun = Registry.beamgun;
+			}
+			
+			if (FlxG.keys.justReleased("F4"))
+			{
+				Registry.player.fireType = 4;
+				Registry.currgroup = Registry.bulletgroup;
+				Registry.currgun = Registry.normgun;
 			}
 		}
 		
