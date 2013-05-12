@@ -14,6 +14,10 @@ package
 		public function BulletManager() 
 		{
 			super();
+			for each (var group:FlxGroup in Registry.gungroups) 
+			{
+				add(group);
+			}
 
 		}
 		
