@@ -11,7 +11,8 @@ package
 		[Embed(source = '../assets/firebullet.png')] private var firebulletPNG:Class;
 		
 		public var damage:int = 3;
-		public var speed:int = 100;
+		public var speed:int = 25;
+		public var acel:int = 500;
 		private var bulletDelay:int = 200;
 		private var vanishCounter:int = 10;
 		
@@ -28,6 +29,7 @@ package
 			x = bx;
 			y = by;
 			velocity.y = -speed;
+			acceleration.y = -acel;
 			exists = true;
 		}
 		
