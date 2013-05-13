@@ -1,3 +1,6 @@
+Shoot-em-Up Game
+=====================
+
 A ShootemUp game based on a existing tutorial.
  
  * [flixel](http://flixel.org/)
